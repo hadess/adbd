@@ -10,3 +10,5 @@ mandir ?= $(datadir)/man
 sysconfdir ?= $(prefix)/etc
 OPT_CFLAGS ?= -O2 -g
 OPT_CXXFLAGS ?= -O2 -g
+
+PROPERTIES_PATH=$(sysconfdir)/adb.properties

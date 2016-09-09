@@ -49,5 +49,8 @@ install: all
 	install -D -m 0755 adb/xdg-adbd $(DESTDIR)$(sbindir)
 	install -d -m 0755 $(DESTDIR)$(prefix)/lib/systemd/system/
 	install -D -m 0644 $(top_srcdir)/adbd.service $(DESTDIR)$(prefix)/lib/systemd/system/
+	install -d -m 0755 $(DESTDIR)$(sysconfdir)
+	[ -e $(DESTDIR)$(sysconfdir)/adb.properties ] || \
+		install -D -m 0644 $(top_srcdir)/adb.properties $(DESTDIR)$(sysconfdir)
 
 .PHONY: subdirs

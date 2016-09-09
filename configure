@@ -99,6 +99,7 @@ EOF
 if [ "$(pwd)" != "$(cd $top_srcdir && pwd)" ] ; then
     cat > Makefile <<EOF
 top_srcdir = $top_srcdir
+top_builddir = .
 include \$(top_srcdir)/Makefile
 EOF
 fi

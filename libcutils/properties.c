@@ -104,6 +104,8 @@ int32_t property_get_int32(const char *key, int32_t default_value) {
     return (int32_t)property_get_imax(key, INT32_MIN, INT32_MAX, default_value);
 }
 
+#ifndef ADB_NON_ANDROID
+
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
@@ -154,3 +156,5 @@ int property_list(
     struct property_list_callback_data data = { propfn, cookie };
     return __system_property_foreach(property_list_callback, &data);
 }
+
+#endif

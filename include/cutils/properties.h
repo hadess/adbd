@@ -19,7 +19,10 @@
 
 #include <sys/cdefs.h>
 #include <stddef.h>
-#if !ADB_NON_ANDROID
+#if ADB_NON_ANDROID
+#define PROP_NAME_MAX	32
+#define PROP_VALUE_MAX	92
+#else
 #include <sys/system_properties.h>
 #endif
 #include <stdint.h>

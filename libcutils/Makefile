@@ -22,6 +22,7 @@ commonSources := \
 	strdup8to16.c \
 	record_stream.c \
 	process_name.c \
+	properties.c \
 	properties_nonandroid.c \
 	threads.c \
 	sched_policy.c \
@@ -52,7 +53,7 @@ LOCAL_CFLAGS += $(targetSmpFlag)
 
 OBJS = $(LOCAL_SRC_FILES:.c=.o) $(LOCAL_CXX_SRC_FILES:.cpp=.o)
 EXTRA_CFLAGS = $(LOCAL_CFLAGS) -I$(top_srcdir)/include -I$(srcdir) -DHAVE_PTHREADS=1 -DADB_NON_ANDROID=1
-EXTRA_CFLAGS += -DPROP_NAME_MAX=32 -DPROP_VALUE_MAX=92
+EXTRA_CFLAGS += -DPROP_NAME_MAX=32 -DPROP_VALUE_MAX=92 -DPROPERTIES_PATH=\"$(PROPERTIES_PATH)\"
 CFLAGS = $(OPT_CFLAGS) $(EXTRA_CFLAGS)
 CXXFLAGS = $(OPT_CXXFLAGS) $(EXTRA_CFLAGS)
 
